@@ -126,7 +126,7 @@ export default function QuickCapturePage() {
           {EXAMPLES.map(ex => (
             <button key={ex} onClick={() => setText(ex)}
               className="w-full text-left text-sm text-slate-400 hover:text-white bg-white/3 hover:bg-white/8 px-4 py-2.5 rounded-xl transition-colors border border-white/5">
-              "{ex}"
+              &ldquo;{ex}&rdquo;
             </button>
           ))}
         </div>

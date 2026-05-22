@@ -71,7 +71,7 @@ export default function SettingsClient({ profile, userId, userEmail }: Props) {
           <div>
             <label className="text-xs text-slate-400 mb-1 block">
               Monthly Passive Income Target ({form.currency})
-              <span className="text-slate-600 ml-1">— "What is financial freedom to you?"</span>
+              <span className="text-slate-600 ml-1">— &ldquo;What is financial freedom to you?&rdquo;</span>
             </label>
             <input type="number" step="100" value={form.financial_freedom_target}
               onChange={e => setForm({...form, financial_freedom_target: e.target.value})}
