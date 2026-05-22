@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 222 47% 98%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 14%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 239 84% 67%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(222, 47%, 5%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: hsl(222, 47%, 8%); }
+  ::-webkit-scrollbar-thumb { background: hsl(217, 32%, 25%); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(239, 84%, 67%); }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-white/5 rounded-2xl;
+  }
+
+  .metric-card {
+    @apply glass-card p-5 hover:border-primary/20 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .status-green { @apply text-emerald-400 bg-emerald-400/10 border border-emerald-400/20; }
+  .status-yellow { @apply text-amber-400 bg-amber-400/10 border border-amber-400/20; }
+  .status-red { @apply text-red-400 bg-red-400/10 border border-red-400/20; }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+           text-muted-foreground hover:text-foreground hover:bg-white/5
+           transition-all duration-200;
+  }
+
+  .sidebar-link.active {
+    @apply text-foreground bg-primary/15 border border-primary/20;
+  }
+
+  /* Loading shimmer */
+  .shimmer {
+    @apply relative overflow-hidden bg-muted/50 rounded-lg;
+  }
+  .shimmer::after {
+    @apply absolute inset-0 -translate-x-full;
+    content: '';
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}

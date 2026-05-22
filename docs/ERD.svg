@@ -1,0 +1,239 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366F1"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#0F0F1A"/>
+  <text x="700" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#E2E8F0">EBSI Financial Freedom OS — Entity Relationship Diagram</text>
+
+  <!-- AUTH.USERS (anchor) -->
+  <g transform="translate(590,70)">
+    <rect width="220" height="60" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="2"/>
+    <rect width="220" height="26" rx="10 10 0 0" fill="#4338CA"/>
+    <text x="110" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">auth.users</text>
+    <text x="8" y="46" font-size="11" fill="#A5B4FC">🔑 id (UUID PK)</text>
+  </g>
+
+  <!-- PROFILES -->
+  <g transform="translate(200,200)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#4338CA"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">profiles</text>
+    <text x="8" y="46" font-size="10" fill="#A5B4FC">🔑 id (FK → users)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">email, full_name</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">currency, timezone</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">ff_target, em_months</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">onboarded</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">created_at, updated_at</text>
+  </g>
+
+  <!-- EXPENSES -->
+  <g transform="translate(20,420)">
+    <rect width="200" height="160" rx="10" fill="#1E1B4B" stroke="#F59E0B" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#D97706"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">expenses</text>
+    <text x="8" y="46" font-size="10" fill="#FCD34D">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">category_id, category_name</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">amount, merchant</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">expense_date, receipt_url</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">is_recurring, interval</text>
+    <text x="8" y="142" font-size="10" fill="#94A3B8">ai_categorized, notes</text>
+  </g>
+
+  <!-- INCOME -->
+  <g transform="translate(240,420)">
+    <rect width="200" height="160" rx="10" fill="#1E1B4B" stroke="#10B981" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#059669"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">income</text>
+    <text x="8" y="46" font-size="10" fill="#6EE7B7">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">category_id, category_name</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">amount, source</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">income_date</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">is_passive, is_recurring</text>
+    <text x="8" y="142" font-size="10" fill="#94A3B8">recurrence_interval</text>
+  </g>
+
+  <!-- ASSETS -->
+  <g transform="translate(460,420)">
+    <rect width="200" height="160" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#7C3AED"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">assets</text>
+    <text x="8" y="46" font-size="10" fill="#C4B5FD">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">name, asset_type</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">current_value, purchase_price</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">is_liquid, monthly_income</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">purchase_date</text>
+    <text x="8" y="142" font-size="10" fill="#94A3B8">notes</text>
+  </g>
+
+  <!-- LIABILITIES -->
+  <g transform="translate(680,420)">
+    <rect width="200" height="160" rx="10" fill="#1E1B4B" stroke="#EF4444" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#DC2626"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">liabilities</text>
+    <text x="8" y="46" font-size="10" fill="#FCA5A5">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">name, liability_type</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">outstanding_balance</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">monthly_payment</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">interest_rate, lender</text>
+    <text x="8" y="142" font-size="10" fill="#94A3B8">start_date, end_date</text>
+  </g>
+
+  <!-- BANK ACCOUNTS -->
+  <g transform="translate(900,420)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#14B8A6" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#0D9488"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">bank_accounts</text>
+    <text x="8" y="46" font-size="10" fill="#99F6E4">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">bank_name, account_type</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">balance, is_liquid</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">notes</text>
+  </g>
+
+  <!-- COMMISSION DEALS -->
+  <g transform="translate(1120,420)">
+    <rect width="220" height="175" rx="10" fill="#1E1B4B" stroke="#EC4899" stroke-width="1.5"/>
+    <rect width="220" height="26" rx="10 10 0 0" fill="#DB2777"/>
+    <text x="110" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">commission_deals</text>
+    <text x="8" y="46" font-size="10" fill="#FBCFE8">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">project_name, customer</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">commission_amount</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">status (7 stages)</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">expected_payment_date</text>
+    <text x="8" y="142" font-size="10" fill="#94A3B8">actual_payment_date</text>
+    <text x="8" y="158" font-size="10" fill="#94A3B8">net_commission</text>
+  </g>
+
+  <!-- NET WORTH SNAPSHOTS -->
+  <g transform="translate(20,680)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#4F46E5"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">net_worth_snapshots</text>
+    <text x="8" y="46" font-size="10" fill="#A5B4FC">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">snapshot_date</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">total_assets, total_liabilities</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">net_worth (generated)</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">liquid_assets, passive_income</text>
+  </g>
+
+  <!-- FINANCIAL GOALS -->
+  <g transform="translate(240,680)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#F97316" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#EA580C"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">financial_goals</text>
+    <text x="8" y="46" font-size="10" fill="#FED7AA">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">goal_name, goal_type</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">target_amount, current_amount</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">target_date, is_primary</text>
+  </g>
+
+  <!-- CASHFLOW FORECASTS -->
+  <g transform="translate(460,680)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#84CC16" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#65A30D"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">cashflow_forecasts</text>
+    <text x="8" y="46" font-size="10" fill="#D9F99D">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">forecast_month</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">expected_income/expenses</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">expected_balance (generated)</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">actual_income/expenses</text>
+  </g>
+
+  <!-- BUDGETS -->
+  <g transform="translate(680,680)">
+    <rect width="200" height="120" rx="10" fill="#1E1B4B" stroke="#06B6D4" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#0891B2"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">budgets</text>
+    <text x="8" y="46" font-size="10" fill="#A5F3FC">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">category_name</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">budget_month</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">budgeted_amount</text>
+  </g>
+
+  <!-- AI CONVERSATIONS -->
+  <g transform="translate(900,680)">
+    <rect width="200" height="120" rx="10" fill="#1E1B4B" stroke="#A855F7" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#9333EA"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">ai_conversations</text>
+    <text x="8" y="46" font-size="10" fill="#E9D5FF">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">title, messages (JSONB)</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">context_snapshot (JSONB)</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">created_at, updated_at</text>
+  </g>
+
+  <!-- QUICK CAPTURES -->
+  <g transform="translate(1120,680)">
+    <rect width="200" height="140" rx="10" fill="#1E1B4B" stroke="#F59E0B" stroke-width="1.5"/>
+    <rect width="200" height="26" rx="10 10 0 0" fill="#D97706"/>
+    <text x="100" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">quick_captures</text>
+    <text x="8" y="46" font-size="10" fill="#FCD34D">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">user_id (FK)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">raw_text, parsed_type</text>
+    <text x="8" y="94" font-size="10" fill="#94A3B8">parsed_amount/category</text>
+    <text x="8" y="110" font-size="10" fill="#94A3B8">linked_expense/income_id</text>
+    <text x="8" y="126" font-size="10" fill="#94A3B8">status</text>
+  </g>
+
+  <!-- REFERENCE TABLES -->
+  <g transform="translate(420,200)">
+    <rect width="180" height="100" rx="10" fill="#1E1B4B" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <rect width="180" height="26" rx="10 10 0 0" fill="#4B5563"/>
+    <text x="90" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">expense_categories</text>
+    <text x="8" y="46" font-size="10" fill="#D1D5DB">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">name (UNIQUE)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">icon, color, is_system</text>
+  </g>
+
+  <g transform="translate(620,200)">
+    <rect width="180" height="100" rx="10" fill="#1E1B4B" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <rect width="180" height="26" rx="10 10 0 0" fill="#4B5563"/>
+    <text x="90" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">income_categories</text>
+    <text x="8" y="46" font-size="10" fill="#D1D5DB">🔑 id (UUID PK)</text>
+    <text x="8" y="62" font-size="10" fill="#94A3B8">name (UNIQUE)</text>
+    <text x="8" y="78" font-size="10" fill="#94A3B8">icon, color, is_passive</text>
+  </g>
+
+  <!-- RELATIONSHIP LINES: auth.users → all tables -->
+  <!-- users → profiles -->
+  <line x1="700" y1="130" x2="340" y2="200" stroke="#6366F1" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="5,3"/>
+  <!-- users → expenses -->
+  <line x1="640" y1="130" x2="160" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+  <!-- users → income -->
+  <line x1="660" y1="130" x2="370" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+  <!-- users → assets -->
+  <line x1="700" y1="130" x2="570" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+  <!-- users → liabilities -->
+  <line x1="730" y1="130" x2="790" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+  <!-- users → bank_accounts -->
+  <line x1="780" y1="130" x2="1010" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+  <!-- users → commission_deals -->
+  <line x1="800" y1="130" x2="1240" y2="420" stroke="#6366F1" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="5,3" opacity="0.6"/>
+
+  <!-- expense_categories → expenses -->
+  <line x1="510" y1="300" x2="170" y2="420" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="4,4" opacity="0.5"/>
+  <!-- income_categories → income -->
+  <line x1="710" y1="300" x2="380" y2="420" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Legend -->
+  <g transform="translate(30,930)">
+    <rect width="12" height="12" rx="2" fill="#4338CA"/>
+    <text x="18" y="11" font-size="11" fill="#94A3B8">FK → auth.users (RLS enforced)</text>
+    <line x1="200" y1="6" x2="230" y2="6" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="236" y="11" font-size="11" fill="#94A3B8">Reference / lookup table</text>
+    <text x="420" y="11" font-size="11" fill="#64748B">All user tables protected by Row Level Security (auth.uid() = user_id)</text>
+  </g>
+</svg>
