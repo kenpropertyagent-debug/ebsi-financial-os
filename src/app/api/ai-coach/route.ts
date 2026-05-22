@@ -3,8 +3,6 @@ import { createClient } from '@/lib/supabase/server'
 import OpenAI from 'openai'
 import { formatCurrency, calcNetWorth, calcDebtRatio, calcRunway, calcFinancialFreedomScore } from '@/lib/utils'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-
 const SYSTEM_PROMPT = (ctx: Record<string, number | string>) => `You are an expert AI Financial Coach specializing in helping Malaysian property agents and commission-based earners achieve financial freedom.
 
 CURRENT FINANCIAL SNAPSHOT (Real data from user's account):
@@ -42,6 +40,7 @@ export async function POST(request: NextRequest) {
     })
   }
 
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   const { message, context, history } = await request.json()
 
   const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [

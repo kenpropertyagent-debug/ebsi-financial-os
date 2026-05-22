@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-
 const PARSE_PROMPT = `You are a financial data parser for Malaysian users. Parse the user's natural language input and extract:
 - type: "expense" or "income"
 - amount: number (MYR)
@@ -28,6 +26,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
     const completion = await openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
       messages: [
